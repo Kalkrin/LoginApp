@@ -1,0 +1,26 @@
+<% include partials/header %>
+    <%if(Object.keys(success_msg).length > 0) {%> 
+        <div class="alert alert-success"><%=success_msg %></div>
+    <%}%>
+    <%if((Object.keys(error_msg).length > 0)) {%>
+        <div class="alert alert-danger"><%=error_msg %></div>
+    <%}%>
+    <%if((Object.keys(error).length > 0)) {%> 
+        <div class="alert alert-danger"><%=error %></div>
+    <%}%>
+    <form method='POST' action='/users/login'>
+        <h3>Login</h3>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Username" />
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
+        </div>
+        <input type="submit" class="btn btn-success btn-block" value="login" />
+        <br>
+        Don't have an account? <a href="/users/register">Sign up!</a>
+    </form>
+<% include partials/footer %>
